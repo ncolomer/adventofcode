@@ -1,4 +1,4 @@
-package day1
+package adventofcode2024
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func Read(input string) (list1, list2 []int, err error) {
+func Day1Read(input string) (list1, list2 []int, err error) {
 	reader := strings.NewReader(input)
 	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() {
@@ -26,8 +26,8 @@ func Read(input string) (list1, list2 []int, err error) {
 	return
 }
 
-// SolvePart1 compute total distance
-func SolvePart1(list1 []int, list2 []int) (res int, err error) {
+// SolveDay1Part1 compute total distance
+func SolveDay1Part1(list1 []int, list2 []int) (res int, err error) {
 	// store input slice in place
 	slices.Sort(list1)
 	slices.Sort(list2)
@@ -42,8 +42,8 @@ func SolvePart1(list1 []int, list2 []int) (res int, err error) {
 	return
 }
 
-// SolvePart2 compute similarity score
-func SolvePart2(list1 []int, list2 []int) (res int, err error) {
+// SolveDay1Part2 compute similarity score
+func SolveDay1Part2(list1 []int, list2 []int) (res int, err error) {
 	// traverse right list and count value occurrences
 	index := make(map[int]int)
 	for _, x := range list2 {

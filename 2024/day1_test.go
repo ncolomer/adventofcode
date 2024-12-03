@@ -1,4 +1,4 @@
-package day1
+package adventofcode2024
 
 import (
 	_ "embed"
@@ -9,51 +9,53 @@ import (
 
 var (
 	//go:embed testdata/day1_sample.txt
-	sample string
+	Day1Sample string
 	//go:embed testdata/day1_puzzle.txt
-	puzzle string
+	Day1Puzzle string
 )
 
-func TestPart1Sample(t *testing.T) {
+func TestDay1Part1Sample(t *testing.T) {
 	// Given
-	list1, list2, err := Read(sample)
+	list1, list2, err := Day1Read(Day1Sample)
 	require.NoError(t, err)
 	// When
-	totalDistance, err := SolvePart1(list1, list2)
+	totalDistance, err := SolveDay1Part1(list1, list2)
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 11, totalDistance)
 }
 
-func TestPart1Puzzle(t *testing.T) {
+func TestDay1Part1Puzzle(t *testing.T) {
 	// Given
-	list1, list2, err := Read(puzzle)
+	list1, list2, err := Day1Read(Day1Puzzle)
 	require.NoError(t, err)
 	// When
-	totalDistance, err := SolvePart1(list1, list2)
+	totalDistance, err := SolveDay1Part1(list1, list2)
 	require.NoError(t, err)
 	// then
-	t.Logf("part 1 result is: %d", totalDistance)
+	assert.Equal(t, 2375403, totalDistance)
+	t.Logf("day 1 part 1 result is: %d", totalDistance)
 }
 
-func TestPart2Sample(t *testing.T) {
+func TestDay1Part2Sample(t *testing.T) {
 	// Given
-	list1, list2, err := Read(sample)
+	list1, list2, err := Day1Read(Day1Sample)
 	require.NoError(t, err)
 	// When
-	similarityScore, err := SolvePart2(list1, list2)
+	similarityScore, err := SolveDay1Part2(list1, list2)
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 31, similarityScore)
 }
 
-func TestPart2Puzzle(t *testing.T) {
+func TestDay1Part2Puzzle(t *testing.T) {
 	// Given
-	list1, list2, err := Read(puzzle)
+	list1, list2, err := Day1Read(Day1Puzzle)
 	require.NoError(t, err)
 	// When
-	totalDistance, err := SolvePart2(list1, list2)
+	totalDistance, err := SolveDay1Part2(list1, list2)
 	require.NoError(t, err)
 	// then
-	t.Logf("part 2 result is: %d", totalDistance)
+	assert.Equal(t, 23082277, totalDistance)
+	t.Logf("day 1 part 2 result is: %d", totalDistance)
 }
