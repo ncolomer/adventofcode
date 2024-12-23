@@ -1,4 +1,4 @@
-package adventofcode2024
+package day3
 
 import (
 	"bufio"

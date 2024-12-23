@@ -2,6 +2,7 @@ package adventofcode2024
 
 import (
 	_ "embed"
+	"github.com/ncolomer/adventofcode/2024/day2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -16,10 +17,10 @@ var (
 
 func TestDay2Part1Sample(t *testing.T) {
 	// Given
-	reports, err := Day2Read(Day2Sample)
+	reports, err := day2.Day2Read(Day2Sample)
 	require.NoError(t, err)
 	// When
-	safeReportCount, err := SolveDay2Part1(reports)
+	safeReportCount, err := day2.SolveDay2Part1(reports)
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 2, safeReportCount)
@@ -27,10 +28,10 @@ func TestDay2Part1Sample(t *testing.T) {
 
 func TestDay2Part1Puzzle(t *testing.T) {
 	// Given
-	reports, err := Day2Read(Day2Puzzle)
+	reports, err := day2.Day2Read(Day2Puzzle)
 	require.NoError(t, err)
 	// When
-	safeReportCount, err := SolveDay2Part1(reports)
+	safeReportCount, err := day2.SolveDay2Part1(reports)
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 483, safeReportCount)
@@ -39,10 +40,10 @@ func TestDay2Part1Puzzle(t *testing.T) {
 
 func TestDay2Part2Puzzle(t *testing.T) {
 	// Given
-	reports, err := Day2Read(Day2Puzzle)
+	reports, err := day2.Day2Read(Day2Puzzle)
 	require.NoError(t, err)
 	// When
-	safeReportCount, err := SolveDay2Part2(reports)
+	safeReportCount, err := day2.SolveDay2Part2(reports)
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 528, safeReportCount)
