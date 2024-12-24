@@ -24,6 +24,7 @@ func SolvePart1(m Map) (res int, err error) {
 }
 
 func SolvePart2(m Map) (res int, err error) {
+	// thanks to https://www.reddit.com/r/adventofcode/comments/1h7tovg/comment/m1zvxef/ for the hints!
 	original := m.Copy()
 	m.ComputeGuardRoute()
 	for y, row := range m.matrix {
