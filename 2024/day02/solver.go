@@ -1,4 +1,4 @@
-package day2
+package day02
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func Day2Read(input string) (reports [][]int, err error) {
+func Day02Read(input string) (reports [][]int, err error) {
 	reader := strings.NewReader(input)
 	scanner := bufio.NewScanner(reader)
 	re := regexp.MustCompile(`\d+`)
@@ -24,8 +24,8 @@ func Day2Read(input string) (reports [][]int, err error) {
 	return
 }
 
-// SolveDay2Part1 compute number of safe report
-func SolveDay2Part1(reports [][]int) (res int, err error) {
+// SolveDay02Part1 compute number of safe report
+func SolveDay02Part1(reports [][]int) (res int, err error) {
 	for _, levels := range reports {
 		if isReportSafe(levels) {
 			res += 1
@@ -34,8 +34,8 @@ func SolveDay2Part1(reports [][]int) (res int, err error) {
 	return res, nil
 }
 
-// SolveDay2Part2 compute number of safe report with Problem Dampener
-func SolveDay2Part2(reports [][]int) (res int, err error) {
+// SolveDay02Part2 compute number of safe report with Problem Dampener
+func SolveDay02Part2(reports [][]int) (res int, err error) {
 out:
 	for _, levels := range reports {
 		// first attempt, using raw report

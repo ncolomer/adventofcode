@@ -1,4 +1,4 @@
-package day4
+package day04
 
 import (
 	"bufio"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func Day4Read(input string) (matrix [][]rune, err error) {
+func Day04Read(input string) (matrix [][]rune, err error) {
 	reader := strings.NewReader(input)
 	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() {
@@ -16,7 +16,7 @@ func Day4Read(input string) (matrix [][]rune, err error) {
 	return
 }
 
-func SolveDay4Part1(matrix [][]rune) (res int, err error) {
+func SolveDay04Part1(matrix [][]rune) (res int, err error) {
 	height := len(matrix)
 	width := len(matrix[0])
 	var strs []string
@@ -93,7 +93,7 @@ func SolveDay4Part1(matrix [][]rune) (res int, err error) {
 	return
 }
 
-func SolveDay4Part2(matrix [][]rune) (res int, err error) {
+func SolveDay04Part2(matrix [][]rune) (res int, err error) {
 	height := len(matrix)
 	width := len(matrix[0])
 	patterns := [][][]rune{

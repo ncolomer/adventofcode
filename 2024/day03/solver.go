@@ -1,4 +1,4 @@
-package day3
+package day03
 
 import (
 	"bufio"
@@ -13,7 +13,7 @@ type Instruction struct {
 	operandB int
 }
 
-func Day3Read(input string) (instructions []Instruction, err error) {
+func Day03Read(input string) (instructions []Instruction, err error) {
 	reader := strings.NewReader(input)
 	scanner := bufio.NewScanner(reader)
 	re := regexp.MustCompile(`(do\(\)|don't\(\)|mul\((\d{1,3}),(\d{1,3})\))`)
@@ -36,16 +36,16 @@ func Day3Read(input string) (instructions []Instruction, err error) {
 	return
 }
 
-// SolveDay3Part1 compute sum of instructions' result
-func SolveDay3Part1(instructions []Instruction) (res int, err error) {
+// SolveDay03Part1 compute sum of instructions' result
+func SolveDay03Part1(instructions []Instruction) (res int, err error) {
 	for _, i := range instructions {
 		res += i.operandA * i.operandB
 	}
 	return
 }
 
-// SolveDay3Part2 compute sum of instructions' result if enabled
-func SolveDay3Part2(instructions []Instruction) (res int, err error) {
+// SolveDay03Part2 compute sum of instructions' result if enabled
+func SolveDay03Part2(instructions []Instruction) (res int, err error) {
 	for _, i := range instructions {
 		if i.enabled {
 			res += i.operandA * i.operandB

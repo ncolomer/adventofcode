@@ -1,4 +1,4 @@
-package day5
+package day05
 
 import (
 	"bufio"
@@ -40,7 +40,7 @@ func (po PageOrdering) Insert(before int, after int) {
 	}
 }
 
-func Day5Read(input string) (pageOrdering PageOrdering, updates [][]int, err error) {
+func Day05Read(input string) (pageOrdering PageOrdering, updates [][]int, err error) {
 	reader := strings.NewReader(input)
 	scanner := bufio.NewScanner(reader)
 	pageOrdering = make(PageOrdering)
@@ -68,7 +68,7 @@ func Day5Read(input string) (pageOrdering PageOrdering, updates [][]int, err err
 	return
 }
 
-func SolveDay5Part1(pageOrdering PageOrdering, updates [][]int) (res int, err error) {
+func SolveDay05Part1(pageOrdering PageOrdering, updates [][]int) (res int, err error) {
 	valid, _ := CheckUpdates(pageOrdering, updates)
 	// compute checksum
 	for _, update := range valid {
@@ -77,7 +77,7 @@ func SolveDay5Part1(pageOrdering PageOrdering, updates [][]int) (res int, err er
 	return
 }
 
-func SolveDay5Part2(pageOrdering PageOrdering, updates [][]int) (res int, err error) {
+func SolveDay05Part2(pageOrdering PageOrdering, updates [][]int) (res int, err error) {
 	_, invalid := CheckUpdates(pageOrdering, updates)
 	var corrected [][]int
 	for _, update := range invalid {
