@@ -35,7 +35,7 @@ func TestDay04Part1Puzzle(t *testing.T) {
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 2545, occurrences)
-	t.Logf("day 04 part 1 result is: %d", occurrences)
+	t.Logf("day04 part 1 result is: %d", occurrences)
 }
 
 func TestDay04Part2Sample(t *testing.T) {
@@ -58,5 +58,5 @@ func TestDay04Part2Puzzle(t *testing.T) {
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 1886, occurrences)
-	t.Logf("day 04 part 2 result is: %d", occurrences)
+	t.Logf("day04 part 2 result is: %d", occurrences)
 }

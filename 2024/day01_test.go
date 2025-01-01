@@ -35,7 +35,7 @@ func TestDay01Part1Puzzle(t *testing.T) {
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 2375403, totalDistance)
-	t.Logf("day 01 part 1 result is: %d", totalDistance)
+	t.Logf("day01 part 1 result is: %d", totalDistance)
 }
 
 func TestDay01Part2Sample(t *testing.T) {
@@ -58,5 +58,5 @@ func TestDay01Part2Puzzle(t *testing.T) {
 	require.NoError(t, err)
 	// then
 	assert.Equal(t, 23082277, totalDistance)
-	t.Logf("day 01 part 2 result is: %d", totalDistance)
+	t.Logf("day01 part 2 result is: %d", totalDistance)
 }

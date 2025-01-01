@@ -82,7 +82,7 @@ func TestDay09Part1Puzzle(t *testing.T) {
 	sum := dm.Compact().Checksum()
 	// then
 	assert.Equal(t, int64(6334655979668), sum)
-	t.Logf("Day09 part 1 result is: %d", sum)
+	t.Logf("day09 part 1 result is: %d", sum)
 }
 
 func TestDay09Part2Sample(t *testing.T) {
@@ -103,5 +103,5 @@ func TestDay09Part2Puzzle(t *testing.T) {
 	sum := dm.Compact2().Checksum()
 	// then
 	assert.Equal(t, int64(6349492251099), sum)
-	t.Logf("Day09 part 2 result is: %d", sum)
+	t.Logf("day09 part 2 result is: %d", sum)
 }
