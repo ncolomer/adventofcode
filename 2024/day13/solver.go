@@ -91,10 +91,10 @@ func SolvePart1(machines []*Machine) (total uint64) {
 					best = play
 				}
 			}
-			fmt.Printf("machine %d best play %v amongst %v\n", m.ID, best, plays)
+			//fmt.Printf("machine %d best play %v amongst %v\n", m.ID, best, plays)
 			total += best.Tokens()
 		} else {
-			fmt.Printf("machine %d no winning play\n", m.ID)
+			//fmt.Printf("machine %d no winning play\n", m.ID)
 		}
 	}
 	return
@@ -117,10 +117,10 @@ func SolvePart2(machines []*Machine) (total uint64) {
 		// testing for integer results
 		if a == math.Trunc(a) && b == math.Trunc(b) {
 			best := Result{uint64(a), uint64(b)}
-			fmt.Printf("machine %d best play %v\n", m.ID, best)
+			//fmt.Printf("machine %d best play %v\n", m.ID, best)
 			total += best.Tokens()
 		} else {
-			fmt.Printf("machine %d no winning play\n", m.ID)
+			//fmt.Printf("machine %d no winning play\n", m.ID)
 		}
 	}
 	return
