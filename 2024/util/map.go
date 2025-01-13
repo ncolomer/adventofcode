@@ -2,6 +2,7 @@ package util
 
 import (
 	"fmt"
+	"iter"
 	"slices"
 )
 
@@ -20,6 +21,33 @@ func (c Coordinate) MoveX(dx int) Coordinate {
 
 func (c Coordinate) MoveY(dy int) Coordinate {
 	return Coordinate{c.X, c.Y + dy}
+}
+
+type Direction int
+
+const (
+	DirectionUp Direction = iota
+	DirectionDown
+	DirectionLeft
+	DirectionRight
+)
+
+func (d Direction) rune() rune {
+	return map[Direction]rune{
+		DirectionUp:    '^',
+		DirectionDown:  'v',
+		DirectionLeft:  '<',
+		DirectionRight: '>',
+	}[d]
+}
+
+func DirectionFrom(r rune) Direction {
+	return map[rune]Direction{
+		'^': DirectionUp,
+		'v': DirectionDown,
+		'<': DirectionLeft,
+		'>': DirectionRight,
+	}[r]
 }
 
 type Map[T any] struct {
@@ -76,4 +104,16 @@ func (m Map[T]) String() (s string) {
 		}
 	}
 	return
+}
+
+func (m Map[T]) Iterate() iter.Seq2[Coordinate, T] {
+	return func(yield func(Coordinate, T) bool) {
+		for y, row := range m.matrix {
+			for x, cell := range row {
+				if !yield(Coordinate{x, y}, cell) {
+					return
+				}
+			}
+		}
+	}
 }
